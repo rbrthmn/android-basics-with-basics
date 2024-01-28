@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android Basics</string>
+    <string name="happy_birthday_text">Happy Birthday stranger!</string>
+    <string name="from_text">From myself</string>
 </resources>
