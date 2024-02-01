@@ -29,43 +29,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AndroidBasicsTheme {
-                DiceRollerApp()
+
             }
         }
     }
 
-    @Preview
-    @Composable
-    fun DiceRollerApp() {
-        DiceWithButtonAndImage(
-            modifier = Modifier
-                .fillMaxSize()
-                .wrapContentSize(Alignment.Center)
-        )
-    }
-
-    @Composable
-    fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
-        var diceResult by remember { mutableIntStateOf(1) }
-        val imageResource = when (diceResult) {
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
-        Column(
-            modifier = modifier,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Image(painter = painterResource(id = imageResource), contentDescription = diceResult.toString())
-            Spacer(modifier = Modifier.height(16.dp))
-            Button(onClick = {
-                diceResult = (1..6).random()
-            }) {
-                Text(text = stringResource(id = R.string.roll))
-            }
-        }
-    }
 }
