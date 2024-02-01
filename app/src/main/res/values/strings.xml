@@ -1,11 +1,16 @@
 <resources>
     <string name="app_name">Android Basics</string>
+
+    <!-- Unit 1 -->
     <string name="happy_birthday_text">Happy Birthday stranger!</string>
     <string name="from_text">From myself</string>
     <string name="android_logo">Android logo</string>
     <string name="dev_name">Roberto Hamano</string>
     <string name="dev_title">Junior Mobile Software Engineer</string>
-    <string name="dev_phone">+55 99 99999-9999</string>
+    <string name="dev_phone">+55 99 99999–9999</string>
     <string name="dev_username">\@rbrthmn</string>
     <string name="dev_email">robertokenzohamano@gmail.com</string>
+
+    <!-- Unit 2 -->
+    <string name="roll">Roll</string>
 </resources>
