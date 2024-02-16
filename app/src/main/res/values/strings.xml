@@ -24,4 +24,19 @@
     <string name="tip_amount">Tip Amount: %s</string>
     <string name="how_was_the_service">Tip Percentage</string>
     <string name="round_up_tip">Round up tip?</string>
+
+    <string name="art1_artist_name">Nikita Pishchugin</string>
+    <string name="art1_name">The lamp</string>
+    <string name="art1_year">2017</string>
+    <string name="art2_artist_name">Jose Teixeira</string>
+    <string name="art2_name">Servilha</string>
+    <string name="art2_year">2016</string>
+    <string name="art3_artist_name">Bolarinwa Olasunkanmi</string>
+    <string name="art3_name">Man on a Basketball Court</string>
+    <string name="art3_year">2023</string>
+    <string name="art4_artist_name">betül akyürek</string>
+    <string name="art4_name">The standing cup</string>
+    <string name="art4_year">2018</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
 </resources>
