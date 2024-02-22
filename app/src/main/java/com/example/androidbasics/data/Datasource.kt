@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.affirmations.data
+package com.example.androidbasics.data
 
 import com.example.androidbasics.R
 import com.example.androidbasics.unit3.model.Affirmation
