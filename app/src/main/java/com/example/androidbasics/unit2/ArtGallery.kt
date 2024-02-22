@@ -34,9 +34,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androidbasics.R
+import com.example.androidbasics.unit2.model.ArtPiece
 
 class ArtGallery {
-
     @Preview
     @Composable
     fun ArtGalleryLayout(modifier: Modifier = Modifier) {
@@ -165,10 +165,3 @@ class ArtGallery {
         }
     }
 }
-
-data class ArtPiece(
-    val imageId: Int,
-    val artName: String,
-    val artistName: String,
-    val artYear: String
-)
