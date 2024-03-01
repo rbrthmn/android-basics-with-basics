@@ -39,68 +39,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AndroidBasicsTheme(darkTheme = false) {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    TopicApp()
-                }
+
             }
         }
     }
 
-    @Preview
-    @Composable
-    fun TopicApp(modifier: Modifier = Modifier) {
-        TopicsList(topics = DataSource.topics, modifier = modifier)
-    }
-
-    @Composable
-    fun TopicsList(topics: List<Topic>, modifier: Modifier) {
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = modifier.fillMaxWidth().padding(8.dp)
-        ) {
-            items(topics) { topic ->
-                TopicCard(topic = topic, modifier = modifier)
-            }
-        }
-    }
-
-    @Composable
-    fun TopicCard(topic: Topic, modifier: Modifier) {
-        Card(modifier = modifier) {
-            Row(modifier = modifier.height(68.dp)) {
-                Image(
-                    painter = painterResource(id = topic.imageResourceId),
-                    contentDescription = stringResource(id = topic.stringResourceId),
-                    contentScale = ContentScale.Crop,
-                    modifier = modifier
-                        .size(width = 68.dp, height = 68.dp)
-                        .aspectRatio(1F)
-                )
-                Column(modifier = modifier.padding(horizontal = 16.dp)) {
-                    Text(
-                        text = stringResource(id = topic.stringResourceId),
-                        overflow = TextOverflow.Ellipsis,
-                        modifier = modifier.padding(top = 16.dp, bottom = 8.dp)
-                    )
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(
-                            painter = painterResource(id = R.drawable.ic_grain),
-                            contentDescription = null
-                        )
-                        Text(
-                            text = topic.coursesNumber.toString(),
-                            style = MaterialTheme.typography.labelMedium,
-                            modifier = modifier.padding(start = 8.dp)
-                        )
-                    }
-                }
-            }
-        }
-    }
 }
 
