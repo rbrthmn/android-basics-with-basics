@@ -1,6 +1,5 @@
 package com.example.androidbasics.unit2
 
-import com.example.androidbasics.unit2.TipCalculator
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.text.NumberFormat

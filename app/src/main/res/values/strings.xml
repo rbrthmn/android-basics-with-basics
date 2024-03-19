@@ -89,6 +89,7 @@
     <string name="years_old">%d years old</string>
     <string name="expand_button_content_description">See more or less information about a dog.</string>
 
+    <string name="heroApp">Superheroes</string>
     <string name="hero1">Nick the Night and Day</string>
     <string name="description1">The Jetpack Hero</string>
     <string name="hero2">Reality Protector</string>
