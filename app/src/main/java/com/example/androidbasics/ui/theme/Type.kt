@@ -23,55 +23,55 @@ val Cabin = FontFamily(
 )
 
 // Set of Material typography styles to start with
-//val Typography = Typography(
-//    displayLarge = TextStyle(
-//        fontFamily = AbrilFatface,
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 36.sp
-//    ),
-//    displayMedium = TextStyle(
-//        fontFamily = Montserrat,
-//        fontWeight = FontWeight.Bold,
-//        fontSize = 20.sp
-//    ),
-//    labelSmall = TextStyle(
-//        fontFamily = Montserrat,
-//        fontWeight = FontWeight.Bold,
-//        fontSize = 14.sp
-//    ),
-//    bodyLarge = TextStyle(
-//        fontFamily = Montserrat,
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 14.sp
-//    )
-////        bodyLarge = TextStyle(
-////                fontFamily = FontFamily.Default,
-////                fontWeight = FontWeight.Normal,
-////                fontSize = 16.sp,
-////                lineHeight = 24.sp,
-////                letterSpacing = 0.5.sp
-////        )
-//        /* Other default text styles to override
-//    titleLarge = TextStyle(
-//        fontFamily = FontFamily.Default,
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 22.sp,
-//        lineHeight = 28.sp,
-//        letterSpacing = 0.sp
-//    ),
-//    labelSmall = TextStyle(
-//        fontFamily = FontFamily.Default,
-//        fontWeight = FontWeight.Medium,
-//        fontSize = 11.sp,
-//        lineHeight = 16.sp,
-//        letterSpacing = 0.5.sp
-//    )
-//    */
-//)
+val Typography = Typography(
+    displayLarge = TextStyle(
+        fontFamily = AbrilFatface,
+        fontWeight = FontWeight.Normal,
+        fontSize = 36.sp
+    ),
+    displayMedium = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp
+    ),
+    labelSmall = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.Bold,
+        fontSize = 14.sp
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = Montserrat,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp
+    )
+//        bodyLarge = TextStyle(
+//                fontFamily = FontFamily.Default,
+//                fontWeight = FontWeight.Normal,
+//                fontSize = 16.sp,
+//                lineHeight = 24.sp,
+//                letterSpacing = 0.5.sp
+//        )
+        /* Other default text styles to override
+    titleLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 22.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp
+    ),
+    labelSmall = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Medium,
+        fontSize = 11.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp
+    )
+    */
+)
 
 
 // Set of Material typography styles to start with
-val Typography = Typography(
+val SuperHeroesTypography = Typography(
     bodyLarge = TextStyle(
         fontFamily = Cabin,
         fontWeight = FontWeight.Normal,
