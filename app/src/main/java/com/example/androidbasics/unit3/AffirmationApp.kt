@@ -27,7 +27,7 @@ class AffirmationApp {
     @Composable
     fun AffirmationsApp() {
         AffirmationList(
-            affirmationList = Datasource().loadAffirmations(),
+            affirmationList = Datasource.loadAffirmations(),
         )
     }
 
@@ -43,7 +43,7 @@ class AffirmationApp {
     @Preview
     @Composable
     private fun AffirmationListPreview() {
-        AffirmationList(affirmationList = Datasource().loadAffirmations(), modifier = Modifier)
+        AffirmationList(affirmationList = Datasource.loadAffirmations(), modifier = Modifier)
     }
 
     @Composable

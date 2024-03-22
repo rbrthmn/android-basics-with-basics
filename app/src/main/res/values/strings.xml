@@ -102,4 +102,10 @@
     <string name="description5">Effortlessly glides in to save the day</string>
     <string name="hero6">Dynamic Yasmine</string>
     <string name="description6">Ability to shift to any form and energize</string>
+
+    <string name="dessert_sold">Desserts sold</string>
+    <string name="total_revenue">Total Revenue</string>
+    <string name="share">Share</string>
+    <string name="share_text">I\'ve clicked %1$d Desserts for a total of $%2$d #AndroidDessertClicker</string>
+    <string name="sharing_not_available">Sharing Not Available</string>
 </resources>
