@@ -54,18 +54,6 @@ class DessertClickerUI {
     ) {
         val uiState by viewModel.uiState.collectAsState()
 
-//        var revenue by rememberSaveable { mutableIntStateOf(0) }
-//        var dessertsSold by rememberSaveable { mutableIntStateOf(0) }
-//
-//        val currentDessertIndex by rememberSaveable { mutableIntStateOf(0) }
-//
-//        var currentDessertPrice by rememberSaveable {
-//            mutableIntStateOf(desserts[currentDessertIndex].price)
-//        }
-//        var currentDessertImageId by rememberSaveable {
-//            mutableIntStateOf(desserts[currentDessertIndex].imageId)
-//        }
-
         Scaffold(
             topBar = {
                 val intentContext = LocalContext.current
@@ -133,9 +121,6 @@ class DessertClickerUI {
         }
     }
 
-    /**
-     * Share desserts sold information using ACTION_SEND intent
-     */
     private fun shareSoldDessertsInformation(intentContext: Context, dessertsSold: Int, revenue: Int) {
         val sendIntent = Intent().apply {
             action = Intent.ACTION_SEND
@@ -198,25 +183,6 @@ class DessertClickerUI {
             }
         }
     }
-//
-//    /**
-//     * Determine which dessert to show.
-//     */
-//    private fun determineDessertToShow(
-//        desserts: List<Dessert>,
-//        dessertsSold: Int
-//    ): Dessert {
-//        var dessertToShow = desserts.first()
-//        for (dessert in desserts) {
-//            if (dessertsSold >= dessert.startProductionAmount) {
-//                dessertToShow = dessert
-//            } else {
-//                break
-//            }
-//        }
-//
-//        return dessertToShow
-//    }
 
     @Composable
     private fun TransactionInfo(

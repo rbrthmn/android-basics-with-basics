@@ -1,5 +1,6 @@
 package com.example.androidbasics.unit4.ui.viewmodels
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.ViewModel
 import com.example.androidbasics.data.Datasource
 import com.example.androidbasics.unit4.ui.states.DessertUiState
@@ -17,12 +18,12 @@ class DessertClickerViewModel : ViewModel() {
 
     private lateinit var currentDessert: Dessert
 
-    // verificar se faz sentido esse codigo
     init {
         openDessertsShop()
     }
 
-    private fun openDessertsShop() {
+    @VisibleForTesting
+    fun openDessertsShop() {
         _uiState.value = DessertUiState(currentDessertImageId = desserts.first().imageId)
         currentDessert = determineDessertToShow(desserts)
     }
