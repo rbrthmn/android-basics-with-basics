@@ -9,8 +9,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.androidbasics.data.Datasource
+import com.example.androidbasics.ui.theme.CupcakeTheme
 import com.example.androidbasics.ui.theme.DessertClickerTheme
+import com.example.androidbasics.unit4.ui.elements.CupcakeApp
 import com.example.androidbasics.unit4.ui.elements.DessertClickerUI
 
 // Tag for logging
@@ -22,15 +23,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate Called")
         setContent {
-            DessertClickerTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .statusBarsPadding(),
-                ) {
-                    DessertClickerUI().DessertClickerApp()
-                }
+            CupcakeTheme {
+                CupcakeApp()
             }
         }
     }

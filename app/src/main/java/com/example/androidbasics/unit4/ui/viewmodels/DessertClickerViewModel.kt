@@ -2,7 +2,7 @@ package com.example.androidbasics.unit4.ui.viewmodels
 
 import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.ViewModel
-import com.example.androidbasics.data.Datasource
+import com.example.androidbasics.unit4.data.DataSource
 import com.example.androidbasics.unit4.ui.states.DessertUiState
 import com.example.dessertclicker.model.Dessert
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +14,7 @@ class DessertClickerViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(DessertUiState())
     val uiState: StateFlow<DessertUiState> = _uiState.asStateFlow()
 
-    private val desserts = Datasource.dessertList
+    private val desserts = DataSource.dessertList
 
     private lateinit var currentDessert: Dessert
 
