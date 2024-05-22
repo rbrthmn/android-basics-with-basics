@@ -1,6 +1,6 @@
 package com.example.androidbasics.unit4
 
-import com.example.androidbasics.unit3.data.Datasource
+import com.example.androidbasics.unit4.data.DataSource
 import com.example.androidbasics.unit4.ui.viewmodels.DessertClickerViewModel
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
@@ -32,7 +32,7 @@ class DessertClickerViewModelTest {
     }
 
     private companion object {
-        val FIRST_IMAGE_ID = Datasource.dessertList.first().imageId
+        val FIRST_IMAGE_ID = DataSource.dessertList.first().imageId
         const val REVENUE_AFTER_FIRST_SALE = 5
         const val SOLD_DESSERTS_AFTER_FIRST_SALE = 1
     }
