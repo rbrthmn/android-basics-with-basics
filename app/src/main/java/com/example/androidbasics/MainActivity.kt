@@ -5,14 +5,8 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.material3.Surface
-import androidx.compose.ui.Modifier
-import com.example.androidbasics.ui.theme.CupcakeTheme
-import com.example.androidbasics.ui.theme.DessertClickerTheme
-import com.example.androidbasics.unit4.ui.elements.CupcakeApp
-import com.example.androidbasics.unit4.ui.elements.DessertClickerUI
+import com.example.androidbasics.ui.theme.LunchTrayTheme
+import com.example.androidbasics.unit4.ui.elements.LunchTrayApp
 
 // Tag for logging
 private const val TAG = "MainActivity"
@@ -23,8 +17,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate Called")
         setContent {
-            CupcakeTheme {
-                CupcakeApp()
+            LunchTrayTheme {
+                LunchTrayApp()
             }
         }
     }
