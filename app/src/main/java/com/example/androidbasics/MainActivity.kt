@@ -5,8 +5,19 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.androidbasics.ui.theme.LunchTrayTheme
-import com.example.androidbasics.unit4.ui.elements.LunchTrayApp
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.calculateEndPadding
+import androidx.compose.foundation.layout.calculateStartPadding
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.androidbasics.ui.theme.ReplyTheme
+import com.example.androidbasics.unit4.ui.elements.ReplyApp
 
 // Tag for logging
 private const val TAG = "MainActivity"
@@ -17,8 +28,19 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate Called")
         setContent {
-            LunchTrayTheme {
-                LunchTrayApp()
+            ReplyTheme {
+                val layoutDirection = LocalLayoutDirection.current
+                Surface(
+                    modifier = Modifier
+                        .padding(
+                            start = WindowInsets.safeDrawing.asPaddingValues()
+                                .calculateStartPadding(layoutDirection),
+                            end = WindowInsets.safeDrawing.asPaddingValues()
+                                .calculateEndPadding(layoutDirection)
+                        )
+                ) {
+                    ReplyApp()
+                }
             }
         }
     }
@@ -51,5 +73,15 @@ class MainActivity : ComponentActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG, "onDestroy Called")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ReplyAppCompactPreview() {
+    ReplyTheme {
+        Surface {
+            ReplyApp()
+        }
     }
 }
