@@ -1,6 +1,7 @@
 package com.example.androidbasics.unit4
 
 import androidx.activity.ComponentActivity
+import androidx.collection.mutableIntListOf
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
@@ -13,6 +14,7 @@ class ReplyAppTest {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
+    @TestCompactWidth
     @Test
     fun compactDevice_verifyUsingBottomNavigation() {
         composeTestRule.setContent {
@@ -23,6 +25,7 @@ class ReplyAppTest {
         composeTestRule.onNodeWithTag(tag).assertExists()
     }
 
+    @TestMediumWidth
     @Test
     fun mediumDevice_verifyUsingRailNavigation() {
         composeTestRule.setContent {
@@ -33,6 +36,7 @@ class ReplyAppTest {
         composeTestRule.onNodeWithTag(tag).assertExists()
     }
 
+    @TestExpandedWidth
     @Test
     fun expandedDevice_verifyUsingPermanentDrawerNavigation() {
         composeTestRule.setContent {

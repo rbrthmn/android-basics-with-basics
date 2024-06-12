@@ -1,0 +1,5 @@
+package com.example.androidbasics.unit4
+
+annotation class TestCompactWidth
+annotation class TestMediumWidth
+annotation class TestExpandedWidth
