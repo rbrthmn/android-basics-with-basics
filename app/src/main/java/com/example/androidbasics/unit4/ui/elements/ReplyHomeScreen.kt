@@ -57,7 +57,7 @@ import com.example.androidbasics.unit4.data.Email
 import com.example.androidbasics.unit4.data.MailboxType
 import com.example.androidbasics.unit4.data.local.LocalAccountsDataProvider
 import com.example.androidbasics.unit4.ui.states.ReplyUiState
-import com.example.androidbasics.unit4.ui.utils.ReplyContentType
+import com.example.androidbasics.unit4.ui.utils.ContentType
 import com.example.androidbasics.unit4.ui.utils.ReplyNavigationType
 
 @Composable
@@ -67,7 +67,7 @@ fun ReplyHomeScreen(
     onEmailCardPressed: (Email) -> Unit,
     onDetailScreenBackPressed: () -> Unit,
     navigationType: ReplyNavigationType,
-    contentType: ReplyContentType,
+    contentType: ContentType,
     modifier: Modifier = Modifier
 ) {
     val navigationItemContentList = listOf(
@@ -148,7 +148,7 @@ private fun ReplyAppContent(
     onEmailCardPressed: (Email) -> Unit,
     navigationItemContentList: List<NavigationItemContent>,
     navigationType: ReplyNavigationType,
-    contentType: ReplyContentType,
+    contentType: ContentType,
     modifier: Modifier = Modifier,
 ) {
     Box(modifier = modifier) {
@@ -168,7 +168,7 @@ private fun ReplyAppContent(
                     .fillMaxSize()
                     .background(MaterialTheme.colorScheme.inverseOnSurface)
             ) {
-                if (contentType == ReplyContentType.LIST_AND_DETAIL) {
+                if (contentType == ContentType.LIST_AND_DETAIL) {
                     ReplyListAndDetailContent(
                         replyUiState = replyUiState,
                         onEmailCardPressed = onEmailCardPressed

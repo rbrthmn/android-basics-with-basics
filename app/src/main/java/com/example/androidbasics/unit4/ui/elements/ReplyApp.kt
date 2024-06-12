@@ -23,7 +23,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.androidbasics.unit4.ui.viewmodels.ReplyViewModel
 import com.example.androidbasics.unit4.data.Email
 import com.example.androidbasics.unit4.data.MailboxType
-import com.example.androidbasics.unit4.ui.utils.ReplyContentType
+import com.example.androidbasics.unit4.ui.utils.ContentType
 import com.example.androidbasics.unit4.ui.utils.ReplyNavigationType
 
 @Composable
@@ -34,24 +34,24 @@ fun ReplyApp(
     val viewModel: ReplyViewModel = viewModel()
     val replyUiState = viewModel.uiState.collectAsState().value
     val navigationType: ReplyNavigationType
-    val contentType: ReplyContentType
+    val contentType: ContentType
 
     when (windowSize) {
         WindowWidthSizeClass.Compact -> {
             navigationType = ReplyNavigationType.BOTTOM_NAVIGATION
-            contentType = ReplyContentType.LIST_ONLY
+            contentType = ContentType.LIST_ONLY
         }
         WindowWidthSizeClass.Medium -> {
             navigationType = ReplyNavigationType.NAVIGATION_RAIL
-            contentType = ReplyContentType.LIST_ONLY
+            contentType = ContentType.LIST_ONLY
         }
         WindowWidthSizeClass.Expanded -> {
             navigationType = ReplyNavigationType.PERMANENT_NAVIGATION_DRAWER
-            contentType = ReplyContentType.LIST_AND_DETAIL
+            contentType = ContentType.LIST_AND_DETAIL
         }
         else -> {
             navigationType = ReplyNavigationType.BOTTOM_NAVIGATION
-            contentType = ReplyContentType.LIST_ONLY
+            contentType = ContentType.LIST_ONLY
         }
     }
 

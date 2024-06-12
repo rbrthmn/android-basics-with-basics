@@ -13,18 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androidbasics.unit4.ui.utils
+
+package com.example.androidbasics.unit4.model
+
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 
 /**
- * Different type of navigation supported by app depending on size and state.
+ * Data model for Sport
  */
-enum class ReplyNavigationType {
-    BOTTOM_NAVIGATION, NAVIGATION_RAIL, PERMANENT_NAVIGATION_DRAWER
-}
-
-/**
- * Content shown depending on size and state of device.
- */
-enum class ContentType {
-    LIST_ONLY, LIST_AND_DETAIL
-}
+data class Sport(
+    val id: Int,
+    @StringRes val titleResourceId: Int,
+    @StringRes val subtitleResourceId: Int,
+    val playerCount: Int,
+    val olympic: Boolean,
+    @DrawableRes val imageResourceId: Int,
+    @DrawableRes val sportsImageBanner: Int,
+    @StringRes val sportDetails: Int
+)
