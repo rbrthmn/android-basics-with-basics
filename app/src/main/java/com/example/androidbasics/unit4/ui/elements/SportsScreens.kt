@@ -60,6 +60,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
@@ -110,9 +111,9 @@ fun SportsApp(
                 contentPadding = innerPadding,
                 modifier = Modifier
                     .fillMaxWidth()
-
             )
         } else if (uiState.isShowingListPage) {
+            val list = stringResource(id = R.string.sports_list)
             SportsList(
                 sports = uiState.sportsList,
                 onClick = {
@@ -127,6 +128,7 @@ fun SportsApp(
                         start = dimensionResource(R.dimen.padding_medium),
                         end = dimensionResource(R.dimen.padding_medium),
                     )
+                    .testTag(list)
             )
         } else {
             SportsDetail(
@@ -373,8 +375,9 @@ fun SportsListAndDetail(
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp)
 ) {
+    val tag = stringResource(id = R.string.sports_list_and_details)
     Row(
-        modifier = modifier,
+        modifier = modifier.testTag(tag),
         horizontalArrangement = Arrangement.SpaceEvenly,
         verticalAlignment = Alignment.Top
     ) {

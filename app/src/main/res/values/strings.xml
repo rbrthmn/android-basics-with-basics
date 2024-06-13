@@ -358,4 +358,7 @@
         <item quantity="other">%1$d Players</item>
     </plurals>
     <string name="olympic_caption">Olympic</string>
+    <string name="sports_list_and_details">list and details</string>
+    <string name="sports_list">list</string>
+    <string name="sports_details">details</string>
 </resources>
