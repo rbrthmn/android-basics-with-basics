@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androidbasics.unit4.ui.elements.SportsApp
 import com.example.androidbasics.unit4.ui.theme.SportsTheme
-import com.example.racetracker.ui.RaceTrackerApp
-import com.example.racetracker.ui.theme.RaceTrackerTheme
+import com.example.androidbasics.unit5.ui.RaceTrackerApp
+import com.example.androidbasics.unit5.ui.theme.RaceTrackerTheme
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)

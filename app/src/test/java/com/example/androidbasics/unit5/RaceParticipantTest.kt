@@ -15,7 +15,7 @@
  */
 package com.example.androidbasics.unit5
 
-import com.example.racetracker.ui.RaceParticipant
+import com.example.androidbasics.unit5.ui.RaceParticipant
 
 class RaceParticipantTest {
     private val raceParticipant = RaceParticipant(

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.racetracker.ui
+package com.example.androidbasics.unit5.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -36,6 +36,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -50,7 +51,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androidbasics.R
-import com.example.racetracker.ui.theme.RaceTrackerTheme
+import com.example.androidbasics.unit5.ui.RaceParticipant
+import com.example.androidbasics.unit5.ui.progressFactor
+import com.example.androidbasics.unit5.ui.theme.RaceTrackerTheme
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 @Composable
 fun RaceTrackerApp() {
@@ -67,6 +72,15 @@ fun RaceTrackerApp() {
     }
     var raceInProgress by remember { mutableStateOf(false) }
 
+    if (raceInProgress) {
+        LaunchedEffect(key1 = playerOne, key2 = playerTwo) {
+            coroutineScope {
+                launch { playerOne.run() }
+                launch { playerTwo.run() }
+            }
+            raceInProgress = false
+        }
+    }
     RaceTrackerScreen(
         playerOne = playerOne,
         playerTwo = playerTwo,
@@ -165,11 +179,11 @@ private fun StatusIndicator(
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
         ) {
             LinearProgressIndicator(
-                progress = progressFactor,
+                progress = { progressFactor },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(dimensionResource(R.dimen.progress_indicator_height))
-                    .clip(RoundedCornerShape(dimensionResource(R.dimen.progress_indicator_corner_radius)))
+                    .clip(RoundedCornerShape(dimensionResource(R.dimen.progress_indicator_corner_radius))),
             )
             Row(
                 modifier = Modifier.fillMaxWidth(),

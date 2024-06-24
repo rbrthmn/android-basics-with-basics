@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.racetracker.ui
+package com.example.androidbasics.unit5.ui
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import kotlinx.coroutines.delay
+import kotlin.coroutines.cancellation.CancellationException
 
 /**
  * This class represents a state holder for race participant.
@@ -46,6 +49,18 @@ class RaceParticipant(
      */
     fun reset() {
         currentProgress = 0
+    }
+
+    suspend fun run() {
+        try {
+            while (currentProgress < maxProgress) {
+                delay(progressDelayMillis)
+                currentProgress += progressIncrement
+            }
+        } catch (e: CancellationException) {
+            Log.e("RaceParticipant", "$name: ${e.message}")
+            throw e // Always re-throw CancellationException.
+        }
     }
 }
 
