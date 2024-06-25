@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androidbasics.unit5.ui.theme
+
+package com.example.androidbasics.unit5.ui.theme.marsphotos
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

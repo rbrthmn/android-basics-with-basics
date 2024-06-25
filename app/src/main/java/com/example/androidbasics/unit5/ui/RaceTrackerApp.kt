@@ -53,7 +53,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.androidbasics.R
 import com.example.androidbasics.unit5.ui.RaceParticipant
 import com.example.androidbasics.unit5.ui.progressFactor
-import com.example.androidbasics.unit5.ui.theme.RaceTrackerTheme
+import com.example.racetracker.ui.theme.RaceTrackerTheme
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
