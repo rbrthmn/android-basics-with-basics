@@ -13,15 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androidbasics.unit5.ui.screens
+package com.example.androidbasics.unit5.domain.viewmodels
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.androidbasics.unit5.data.NetworkMarsPhotosRepository
 import com.example.androidbasics.unit5.data.network.MarsApi
-import com.example.androidbasics.unit5.data.network.MarsPhoto
+import com.example.androidbasics.unit5.domain.models.MarsPhoto
 import kotlinx.coroutines.launch
 import java.io.IOException
 
@@ -44,7 +45,8 @@ class MarsViewModel : ViewModel() {
     private fun getMarsPhotos() {
         viewModelScope.launch {
             marsUiState = try {
-                val listResult = MarsApi.retrofitService.getPhotos()
+                val marsPhotosRepository = NetworkMarsPhotosRepository()
+                val listResult = marsPhotosRepository.getMarsPhotos()
                 MarsUiState.Success("Success: ${listResult.size} Mars photos retrieved")
             } catch (e: IOException) {
                 MarsUiState.Error

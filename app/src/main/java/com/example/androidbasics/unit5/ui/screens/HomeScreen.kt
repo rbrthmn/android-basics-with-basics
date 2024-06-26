@@ -32,6 +32,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androidbasics.R
+import com.example.androidbasics.unit5.domain.viewmodels.MarsViewModel
 import com.example.androidbasics.unit5.ui.theme.marsphotos.MarsPhotosTheme
 
 @Composable

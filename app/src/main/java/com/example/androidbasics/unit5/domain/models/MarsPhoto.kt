@@ -1,4 +1,4 @@
-package com.example.androidbasics.unit5.data.network
+package com.example.androidbasics.unit5.domain.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
