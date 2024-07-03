@@ -49,8 +49,7 @@ class MarsViewModel(private val repository: MarsPhotosRepository) : ViewModel() 
     private fun getMarsPhotos() {
         viewModelScope.launch {
             marsUiState = try {
-                val listResult = repository.getMarsPhotos()
-                MarsUiState.Success("Success: ${listResult.size} Mars photos retrieved")
+                MarsUiState.Success(photos = repository.getMarsPhotos()[0])
             } catch (e: IOException) {
                 MarsUiState.Error
             }
@@ -58,7 +57,7 @@ class MarsViewModel(private val repository: MarsPhotosRepository) : ViewModel() 
     }
 
     sealed interface MarsUiState {
-        data class Success(val photos: String) : MarsUiState
+        data class Success(val photos: MarsPhoto) : MarsUiState
         object Error : MarsUiState
         object Loading : MarsUiState
     }
