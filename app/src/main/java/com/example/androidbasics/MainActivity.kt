@@ -5,21 +5,24 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.androidbasics.unit5.ui.MarsPhotosApp
-import com.example.androidbasics.unit5.ui.theme.marsphotos.MarsPhotosTheme
+import com.example.androidbasics.unit6.inventory.InventoryApp
+import com.example.androidbasics.unit6.inventory.ui.theme.InventoryTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
-            MarsPhotosTheme {
+            InventoryTheme {
+                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
                 ) {
-                    MarsPhotosApp()
+                    InventoryApp()
                 }
             }
         }
