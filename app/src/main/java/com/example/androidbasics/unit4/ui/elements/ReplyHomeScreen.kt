@@ -52,6 +52,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.androidbasics.R
 import com.example.androidbasics.unit4.data.Email
 import com.example.androidbasics.unit4.data.MailboxType
@@ -306,3 +307,9 @@ private data class NavigationItemContent(
     val icon: ImageVector,
     val text: String
 )
+
+@Preview
+@Composable
+fun NavigationDrawerHeaderPreview() {
+    NavigationDrawerHeader()
+}

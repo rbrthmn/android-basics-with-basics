@@ -19,6 +19,7 @@ import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.androidbasics.unit4.ui.viewmodels.ReplyViewModel
 import com.example.androidbasics.unit4.data.Email
@@ -73,4 +74,11 @@ fun ReplyApp(
         contentType = contentType,
         modifier = modifier
     )
+}
+
+
+@Preview
+@Composable
+fun ReplyAppPreview() {
+    ReplyApp(windowSize = WindowWidthSizeClass.Compact)
 }
