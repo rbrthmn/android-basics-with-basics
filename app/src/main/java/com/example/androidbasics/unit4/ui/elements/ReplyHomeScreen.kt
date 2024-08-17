@@ -57,6 +57,7 @@ import com.example.androidbasics.R
 import com.example.androidbasics.unit4.data.Email
 import com.example.androidbasics.unit4.data.MailboxType
 import com.example.androidbasics.unit4.data.local.LocalAccountsDataProvider
+import com.example.androidbasics.unit4.data.local.LocalEmailsDataProvider
 import com.example.androidbasics.unit4.ui.states.ReplyUiState
 import com.example.androidbasics.unit4.ui.utils.ContentType
 import com.example.androidbasics.unit4.ui.utils.ReplyNavigationType
@@ -312,4 +313,49 @@ private data class NavigationItemContent(
 @Composable
 fun NavigationDrawerHeaderPreview() {
     NavigationDrawerHeader()
+}
+
+@Preview
+@Composable
+fun ReplyAppContentPreview() {
+    val mailboxes: Map<MailboxType, List<Email>> =
+        LocalEmailsDataProvider.allEmails.groupBy { it.mailbox }
+    val uiState =
+        ReplyUiState(
+            mailboxes = mailboxes,
+            currentSelectedEmail = mailboxes[MailboxType.Inbox]?.get(0)
+                ?: LocalEmailsDataProvider.defaultEmail
+        )
+    val navigationItemContentList = listOf(
+        NavigationItemContent(
+            mailboxType = MailboxType.Inbox,
+            icon = Icons.Default.Inbox,
+            text = stringResource(id = R.string.tab_inbox)
+        ),
+        NavigationItemContent(
+            mailboxType = MailboxType.Sent,
+            icon = Icons.AutoMirrored.Filled.Send,
+            text = stringResource(id = R.string.tab_sent)
+        ),
+        NavigationItemContent(
+            mailboxType = MailboxType.Drafts,
+            icon = Icons.Default.Drafts,
+            text = stringResource(id = R.string.tab_drafts)
+        ),
+        NavigationItemContent(
+            mailboxType = MailboxType.Spam,
+            icon = Icons.Default.Report,
+            text = stringResource(id = R.string.tab_spam)
+        )
+    )
+
+    ReplyAppContent(
+        replyUiState = uiState,
+        onTabPressed = {},
+        onEmailCardPressed = {},
+        navigationItemContentList = navigationItemContentList,
+        navigationType = ReplyNavigationType.BOTTOM_NAVIGATION,
+        contentType = ContentType.LIST_ONLY,
+        modifier = Modifier
+    )
 }
