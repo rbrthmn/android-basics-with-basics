@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androidbasics.unit6.dessertrelease.local
+package com.example.androidbasics.unit6.dessertrelease.data.local
 
 /*
  * Set data for Android Release dessert name
