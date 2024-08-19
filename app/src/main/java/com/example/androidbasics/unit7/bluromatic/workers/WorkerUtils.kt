@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.bluromatic.workers
+package com.example.androidbasics.unit7.bluromatic.workers
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -26,13 +26,13 @@ import android.util.Log
 import androidx.annotation.WorkerThread
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.example.bluromatic.CHANNEL_ID
-import com.example.bluromatic.NOTIFICATION_ID
-import com.example.bluromatic.NOTIFICATION_TITLE
-import com.example.bluromatic.OUTPUT_PATH
-import com.example.bluromatic.R
-import com.example.bluromatic.VERBOSE_NOTIFICATION_CHANNEL_DESCRIPTION
-import com.example.bluromatic.VERBOSE_NOTIFICATION_CHANNEL_NAME
+import com.example.androidbasics.R
+import com.example.androidbasics.unit7.bluromatic.CHANNEL_ID
+import com.example.androidbasics.unit7.bluromatic.NOTIFICATION_ID
+import com.example.androidbasics.unit7.bluromatic.NOTIFICATION_TITLE
+import com.example.androidbasics.unit7.bluromatic.OUTPUT_PATH
+import com.example.androidbasics.unit7.bluromatic.VERBOSE_NOTIFICATION_CHANNEL_DESCRIPTION
+import com.example.androidbasics.unit7.bluromatic.VERBOSE_NOTIFICATION_CHANNEL_NAME
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream

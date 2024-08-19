@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.example.bluromatic
+package com.example.androidbasics.unit7.bluromatic
 
 import android.app.Application
-import com.example.bluromatic.data.AppContainer
-import com.example.bluromatic.data.DefaultAppContainer
+import com.example.androidbasics.unit7.bluromatic.data.AppContainer
+import com.example.androidbasics.unit7.bluromatic.data.DefaultAppContainer
 
 class BluromaticApplication : Application()  {
     /** AppContainer instance used by the rest of classes to obtain dependencies */

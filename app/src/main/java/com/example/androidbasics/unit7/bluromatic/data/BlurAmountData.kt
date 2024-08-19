@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.bluromatic.data
+package com.example.androidbasics.unit7.bluromatic.data
 
-import com.example.bluromatic.R
+import com.example.androidbasics.R
+
 
 object BlurAmountData {
     val blurAmount = listOf(

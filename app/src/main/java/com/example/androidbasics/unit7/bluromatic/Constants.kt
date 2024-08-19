@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.bluromatic
+package com.example.androidbasics.unit7.bluromatic
 
 // Notification Channel constants
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.bluromatic.ui.theme
+package com.example.androidbasics.unit7.bluromatic.ui.theme
 
 import android.app.Activity
 import android.os.Build

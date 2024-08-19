@@ -78,6 +78,7 @@ dependencies {
     implementation("androidx.room:room-ktx:${rootProject.extra["room_version"]}")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("androidx.work:work-runtime-ktx:2.8.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose-android:2.8.4")
     ksp("androidx.room:room-compiler:${rootProject.extra["room_version"]}")
 
     testImplementation("junit:junit:4.13.2")

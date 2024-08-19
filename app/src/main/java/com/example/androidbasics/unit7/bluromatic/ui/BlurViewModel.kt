@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.example.bluromatic.ui
+package com.example.androidbasics.unit7.bluromatic.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.bluromatic.BluromaticApplication
-import com.example.bluromatic.data.BlurAmountData
-import com.example.bluromatic.data.BluromaticRepository
+import com.example.androidbasics.unit7.bluromatic.BluromaticApplication
+import com.example.androidbasics.unit7.bluromatic.data.BlurAmountData
+import com.example.androidbasics.unit7.bluromatic.data.BluromaticRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 

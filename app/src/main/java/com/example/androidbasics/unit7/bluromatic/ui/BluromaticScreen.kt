@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.bluromatic.ui
+package com.example.androidbasics.unit7.bluromatic.ui
 
 import android.content.Context
 import android.content.Intent
@@ -62,9 +62,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.bluromatic.R
-import com.example.bluromatic.data.BlurAmount
-import com.example.bluromatic.ui.theme.BluromaticTheme
+import com.example.androidbasics.R
+import com.example.androidbasics.unit7.bluromatic.data.BlurAmount
+import com.example.androidbasics.unit7.bluromatic.ui.theme.BluromaticTheme
 
 @Composable
 fun BluromaticScreen(blurViewModel: BlurViewModel = viewModel(factory = BlurViewModel.Factory)) {

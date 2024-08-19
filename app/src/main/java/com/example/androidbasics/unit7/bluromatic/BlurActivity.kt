@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.bluromatic
+package com.example.androidbasics.unit7.bluromatic
 
 import android.content.ContentResolver
 import android.content.Context
@@ -26,8 +26,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.bluromatic.ui.BluromaticScreen
-import com.example.bluromatic.ui.theme.BluromaticTheme
+import com.example.androidbasics.R
+import com.example.androidbasics.unit7.bluromatic.ui.BluromaticScreen
+import com.example.androidbasics.unit7.bluromatic.ui.theme.BluromaticTheme
 
 class BlurActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

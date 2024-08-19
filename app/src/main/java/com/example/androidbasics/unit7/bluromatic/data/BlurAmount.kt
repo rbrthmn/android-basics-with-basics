@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.bluromatic.data
+package com.example.androidbasics.unit7.bluromatic.data
 
 import androidx.annotation.StringRes
 
