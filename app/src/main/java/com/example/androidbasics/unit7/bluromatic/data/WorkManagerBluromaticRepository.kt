@@ -19,10 +19,12 @@ package com.example.androidbasics.unit7.bluromatic.data
 import android.content.Context
 import android.net.Uri
 import androidx.work.Data
+import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequest
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
+import com.example.androidbasics.unit7.bluromatic.IMAGE_MANIPULATION_WORK_NAME
 import com.example.androidbasics.unit7.bluromatic.KEY_BLUR_LEVEL
 import com.example.androidbasics.unit7.bluromatic.KEY_IMAGE_URI
 import com.example.androidbasics.unit7.bluromatic.getImageUri
@@ -43,7 +45,11 @@ class WorkManagerBluromaticRepository(context: Context) : BluromaticRepository {
      * @param blurLevel The amount to blur the image
      */
     override fun applyBlur(blurLevel: Int) {
-        var continuation = workManager.beginWith(OneTimeWorkRequest.from(CleanupWorker::class.java))
+        var continuation = workManager.beginUniqueWork(
+            IMAGE_MANIPULATION_WORK_NAME,
+            ExistingWorkPolicy.REPLACE,
+            OneTimeWorkRequest.from(CleanupWorker::class.java)
+        )
         val blurBuilder = OneTimeWorkRequestBuilder<BlurWorker>()
         blurBuilder.setInputData(createInputDataForWorkRequest(blurLevel, imageUri))
         continuation = continuation.then(blurBuilder.build())
