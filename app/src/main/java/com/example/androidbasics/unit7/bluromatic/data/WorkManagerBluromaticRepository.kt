@@ -18,6 +18,7 @@ package com.example.androidbasics.unit7.bluromatic.data
 
 import android.content.Context
 import android.net.Uri
+import androidx.lifecycle.asFlow
 import androidx.work.Data
 import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequest
@@ -27,18 +28,24 @@ import androidx.work.WorkManager
 import com.example.androidbasics.unit7.bluromatic.IMAGE_MANIPULATION_WORK_NAME
 import com.example.androidbasics.unit7.bluromatic.KEY_BLUR_LEVEL
 import com.example.androidbasics.unit7.bluromatic.KEY_IMAGE_URI
+import com.example.androidbasics.unit7.bluromatic.TAG_OUTPUT
 import com.example.androidbasics.unit7.bluromatic.getImageUri
 import com.example.androidbasics.unit7.bluromatic.workers.BlurWorker
 import com.example.androidbasics.unit7.bluromatic.workers.CleanupWorker
 import com.example.androidbasics.unit7.bluromatic.workers.SaveImageToFileWorker
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.mapNotNull
 
 class WorkManagerBluromaticRepository(context: Context) : BluromaticRepository {
 
-    override val outputWorkInfo: Flow<WorkInfo?> = MutableStateFlow(null)
     private var imageUri: Uri = context.getImageUri()
     private val workManager = WorkManager.getInstance(context)
+    override val outputWorkInfo: Flow<WorkInfo> = workManager.getWorkInfosByTagLiveData(TAG_OUTPUT)
+        .asFlow()
+        .mapNotNull {
+            if (it.isNotEmpty()) it.first() else null
+        }
 
     /**
      * Create the WorkRequests to apply the blur and save the resulting image
@@ -54,6 +61,7 @@ class WorkManagerBluromaticRepository(context: Context) : BluromaticRepository {
         blurBuilder.setInputData(createInputDataForWorkRequest(blurLevel, imageUri))
         continuation = continuation.then(blurBuilder.build())
         val save = OneTimeWorkRequestBuilder<SaveImageToFileWorker>()
+            .addTag(TAG_OUTPUT)
             .build()
         continuation = continuation.then(save)
         continuation.enqueue()
